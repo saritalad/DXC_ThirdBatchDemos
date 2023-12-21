@@ -1,0 +1,8 @@
+ npm i --save bootstrap/   npm install bootstrap@5 --save
+npm i --save jquery
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+"node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+===================================
+https://www.freecodecamp.org/news/how-to-validate-angular-reactive-forms/
+D:\_A_VirtualE_Versity_All\A_ThirdLateralBatch\RoutingExample\node_modules\bootstrap\dist\css\bootstrap.min.css

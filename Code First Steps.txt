@@ -1,0 +1,34 @@
+Code First Approach in Entity Framework
+  write Model classes ( validation attribute )
+1 if data entered is valid or not
+2 Table will get constraints applied
+AppDBContext created  and Connection is written in Appsettings.json 
+decide DB name 
+Migration is done 
+1 create tables with constraints ( Query File )
+2 Update database ( Exceute the query file)
+=====================================================
+Steps for Code First Approach
+step1 : Nuget Pakages add 
+Microsoft.EntityFrameworkCore
+                            ".SqlServer
+			"  Tools	
+step 2: Add Models Folder in Root Folder
+inside it Create AppDbContext Class
+step 3: Add Model classes ORM ex Employees and Department
+step 4: Add connection string DEcide databse name in appsettings.json
+step 5 : Add DI in program file or stratup class ConfigureServices
+step 6: Do Migration as follows 
+Open NugetManager Console (from Tools Menu)
+PM>add-Migration
+Name: m1
+Remove-migration m2
+see if Migration folder is created  then
+PM>update-Database
+if this command does not work 
+Use Command Prompt 
+as follows
+dotnet ef migrations add M1
+       dotnet ef database update
+
+						

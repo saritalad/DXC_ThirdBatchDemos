@@ -1,0 +1,22 @@
+<p>product-list works!</p>
+<a routerLink="/Add">New prodloyees</a> 
+
+<table class="table table-stripped table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+        <tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of productlist">
+            <td>{{prod.id}}</td>
+      <td>{{prod.productName}}</td>
+      <td>{{prod.price}}</td>
+      <td>{{prod.mfd|date:'dd-MM-yy'}}</td>
+      <td><a routerLink="/Edit/{{prod.id}}"  class="btn btn-warning" >Edit</a></td>
+      <td><a routerLink="/Details/{{prod.id}}">Details</a></td>
+     <td> <a href="javascript:void()" (click)="Delete(prod.id)">Delete</a></td>
+     </tr>
+        </tbody>
+</table>

@@ -1,0 +1,24 @@
+<p>product-add works!</p>
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+   
+    <div>
+        <h1>New Employee</h1>
+            <pre></pre>
+            <div class="form-group">
+            <label for="name">name</label><br>
+            <input name="productname" type="text" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="price">price</label><br>
+                <input type="number" ngModel  name="price">
+            </div>
+            <div class="form-group">
+                <label for="mfd">Manufacture Date</label><br>
+                <input type="date" ngModel  name="mfd">
+            </div>
+             
+            <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+{{newprod|json}}
+

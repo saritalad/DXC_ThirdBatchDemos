@@ -1,0 +1,69 @@
+for the form used ngForm (directive)=> FormGroup  
+ <form ngForm>  formGroup
+
+<input ngModel> =>  instance of FormControl   ngModel directive 
+
+<input> binding is done using ngModel
+
+<input>
+<submit button>
+
+ </form>
+
+<div *ngIf ="  "  > role provides more functionalities to the html tag 
+=============================================
+validation :
+ the data entered in input tag :
+to check whether it is as expected  format for the project 
+ 1 required  ( not null)
+ 2 format of data / number / string / pattern ex : email /phone number / credit card etc 
+ 3 string format  minlength and max length
+
+-----------------------------
+2 2 locations in which validation can be done 
+==========================================
+Validation Project starts
+step 1 create new project  FormValidationExample
+step 2 add bootstrap and jquery ( i install ii copy path in angular.json)
+step 3 add Models folder  and inside that Model class User.ts   
+step 4 add Component AddUser, add EditUser
+step 5 add routes in routing Module
+step 6 Add RouteLinks on App Component 
+step 7 Add FormsModule in App.Module 
+-------------------------------------------------
+Reactive Form or Model driven Form
+step 1 : add ReactiveFormsModule in APP Module 
+step 2 add new component editUser
+step 3 : Add userForm = new FormGroup({}) in EditUser component
+step 4 : write get method to make properties Id, Firtname, Lastname of Component class
+
+
+form tag ->ngForm= new instance of formGroup
+input   tag-> ngModel = new instance of formControl 
+input   tag-> ngModel = new instance of formControl 
+input   tag-> ngModel = new instance of formControl 
+
+------------------------------------------
+CRUd operation continued in FormValidationExample
+ step 1 : create service   ng g s User
+step 2 : add Array of users 
+step 3: getUsers() method in UserService 
+
+step 4: create component UserList
+step 5 Add route list in Routing Module 
+step 6 : write constructor in UserList and inject userService in it 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

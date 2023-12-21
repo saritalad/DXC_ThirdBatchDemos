@@ -1,0 +1,30 @@
+1XSS cross site scripting attacks 
+2 Custom Login page using Api and Angular
+3 Ms Identity Framework for Authentication and Authorization
+==========================================
+steps for XSS Attack defending example
+1 create web api Project (without security)
+2 Write a Model class as follows 
+
+ public class ContactFormModel
+ {
+     public string name { get; set; }
+     public string email { get; set; }
+     public string message { get; set; }
+ }
+3 write DemoController 
+with Post Method with route PostContactMessage
+[Route("PostContactMessage")]
+[HttpPost]
+public async Task<IActionResult> PostContactMessage(ContactFormModel model)
+{
+    if (model != null) {
+        return Ok("Success");
+    }
+    else { return BadRequest(); }
+}
+4 Add Nuget package HtmlSanitizer 8.0
+  Newtonsoft.Json 13.0
+5 write AntiXSSMiddleware class 
+6 ErrorResponse class 
+7 call the middleware in Program.cs

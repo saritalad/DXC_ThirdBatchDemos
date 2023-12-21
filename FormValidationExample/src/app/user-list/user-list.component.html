@@ -1,0 +1,19 @@
+<div class="container">
+<h1>User List</h1>
+<h2><a routerLink="/add">New User</a></h2>
+<table class="table table-stripped">
+
+<tr>
+<th>Id</th>
+<th>Firstname</th>
+<th>lastname</th>
+</tr>
+<tr *ngFor="let user of userlist">
+<td>{{user.id}}</td>
+<td>{{user.firstname}}</td>
+<td>{{user.lastname}}</td>
+<td><a routerLink="/edit/{{user.id}}">Edit</a></td>
+<td><a (click)="delete(user.id)">Delete</a></td>
+</tr>
+</table>
+</div>

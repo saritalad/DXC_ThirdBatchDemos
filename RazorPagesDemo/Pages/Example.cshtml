@@ -1,0 +1,30 @@
+﻿@page "/Fruitlist"
+@model RazorPagesDemo.Pages.ExampleModel
+@{
+    Layout = "~/Pages/Shared/_myLayout.cshtml";
+}
+<div style="margin-top:30px">
+    <form method="post">
+        <div> Enter Name</div>
+        <div><input asp-for="Username"/>          
+        </div>
+        <div><button type="Submit" class="btn btn-primary">Submit</button></div>
+            </form>
+@if(!string.IsNullOrEmpty(Model.Username))
+    {
+        
+        <h1>@Model.Username</h1>
+
+    }
+    </div>
+
+    <div class="Jumbotron">
+        <h1> List of Fruits</h1>
+        <ol>
+        @foreach(string f in Model.fruits)
+        {
+           <li>@f</li>
+        }
+    </ol>
+    <h1> Count : @Model.fruits.Count();</h1>
+    </div>

@@ -1,0 +1,28 @@
+<div class="container">
+<form #productform="ngForm" novalidate (ngSubmit)="onSubmit(prod)">
+    <div>
+        <h1>New Product</h1>
+            <pre></pre>
+            <div class="form-group">
+                <label for="id">id</label><br>
+                <input #id="ngModel"  type="number"  readonly id="id"  name="id" class="form-control" [(ngModel)]="prod.id">
+            </div>
+        <div class="form-group">
+            <label for="productname">productname</label><br>
+            <input #productname="ngModel" required minlength="3" maxlength="50" type="text" name="productName"  class="form-control" [(ngModel)]="prod.productName">
+                 </div>
+            <div class="form-group">
+                <label for="price">Price</label><br>
+                <input #price="ngModel" required minlength="2" maxlength="10" type="number"  name="price"      class="form-control" [(ngModel)]="prod.price">
+                    <p *ngIf="price.hasError('required')">Price  is required</p>
+                  
+                </div>
+                <div class="form-group">
+                    <label for="mfd">Manufacture Date</label><br>
+                    <input  type="date"  name="mfd"  class="form-control" [(ngModel)]="prod.mfd">
+                                        
+                    </div>
+                    <input type="submit" value="submit" [disabled]="!productform.valid"/>
+                </div>
+                <h2>{{prod.id}}</h2>
+             <h1>   {{prod.productName}}</h1>
