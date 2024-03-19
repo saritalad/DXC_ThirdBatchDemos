@@ -1,0 +1,10 @@
+﻿@model MYMVC_ViewModelDemo.Models.CategoryViewModel
+
+<b>Category Name:</b> @Model.category.Catname
+<h1>Product Details:</h1>
+@foreach(var item in Model.productlist)
+            {
+                <ul>
+                    <li>@item.ProductId  @item.Productname  @item.Price</li>
+                </ul>
+            }

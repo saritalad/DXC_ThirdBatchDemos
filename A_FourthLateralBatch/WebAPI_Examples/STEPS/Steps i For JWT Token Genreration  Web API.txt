@@ -1,0 +1,33 @@
+steps for JWT API Demo
+1 New API project
+2 Write JWT key in Appsettings.JSon
+"JWT": {
+  "Issuer": "https://localhost:44359",
+  "Audience": "https://localhost:44359",
+  "key": "Sarita Lad Issues JWT token"
+}
+3 Model Class User {username, password}
+4 create LogInController
+5 Write AuthenticateUser in LoGinController ( Hint : inject Iconfiguration in contructor)
+6 nuget Pachkege Microsoft.aspnetcore.Authentication.JWtBearer
+7 Write GenerateTowken Method
+8 write Login Method (HTTpPost)
+9 Configure JWT TokenBearer Service in Program File
+  builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+  {
+
+      options.TokenValidationParameters = new TokenValidationParameters
+      {
+          ValidateIssuer = true,
+          ValidateAudience = true,
+          ValidateLifetime = true,
+          ValidIssuer = builder.Configuration["JWT:Issuer"],
+          ValidAudience = builder.Configuration["JWT:Issuer"],
+          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:key"]))
+
+      };
+
+10 Run the Application and try to generate Token
+11 https://jwt.io/ to decode the JWT Token
+
+

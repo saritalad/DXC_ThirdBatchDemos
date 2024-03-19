@@ -1,0 +1,46 @@
+DB First Approach Steps
+1 create Database DXCDB
+2 Create Table Products
+3 add few records
+4 Add following Nuget Packages(in Razor Pages New Application)
+   i Microsoft.EntityframeworkCore  Version 6.0.25
+   ii Microsoft.EntityframeworkCore.SqlServer 6.0.25
+   iii Microsoft.EntityframeworkCore.Tools 
+5 Add Connection string in appsettings.json
+"ConnectionStrings": {
+    "MyConStr": "server=ABCCOMPUTER;database=DXCDB;Trusted_Connection=True;"
+  }
+6 Add Models Folder in it 
+  Add Class AppDBcontext class with me
+   Add Model Classes ORM  and Dbset in AppDbContext class 
+  write contructor and pass options parameter to it 
+7 Register AppDbContext Class in DI in Program File 
+ var connectionString = builder.Configuration.GetConnectionString("MyConstr") ?? throw new InvalidOperationException("Connection string 'AppDBContextConnection' not found.");
+
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseSqlServer(connectionString));
+8 Add New Scaffoding Item (
+Razor pages using EF CRUD  template 
+give ORM Model Product
+and DbContext Class name AppDBContext
+This will create Index,Create, Edit and Delete Razor Pages 
+=====================================================
+
+
+Http Verb :
+HttpGet ------------>retreive data         select          
+HttpPost---------------- Posting of data   insert 
+HttpPut ----------------- Updating Data    update
+HttpDelete --------------- remove data     delete
+
+
+
+
+
+
+
+
+
+
+
+

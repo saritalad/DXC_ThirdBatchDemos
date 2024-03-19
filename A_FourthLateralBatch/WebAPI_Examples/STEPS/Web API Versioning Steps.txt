@@ -1,0 +1,79 @@
+Web API Versiong Steps
+1 New Project 6.0
+2 Nuget packages 
+Nuget Package Microsoft.Mvc.aspnetcore.Versioning
+Microsoft.aspnetcore..Mvc.Versioning.ApiExplorer
+3 Tow folders v1 and v2 under controllers
+4 add StudentsController in each folder v1 and v2
+5 add Class Student1 in file of StudentsController in v1
+ public class Student1
+ {
+     public string FirstName { get; set; } = string.Empty;
+
+     public string LastName { get; set; } = string.Empty;
+ }
+6 add Class Student2 in file of StudentsController in v2
+  public class Student2
+  {
+      public string FirstName { get; set; } = string.Empty;
+
+      public string LastName { get; set; } = string.Empty;
+
+      public string City { get; set; } = string.Empty;
+
+      public string Country { get; set; } = string.Empty;
+
+  }
+7 configure StudentsController with Attribute
+[Route("api/v{version:apiversion}/[controller]")]
+[ApiVersion("1.0")]
+and 
+[ApiVersion("2.0")]
+8 add class ConfigureSwaggerOptions in root folder of project
+
+9 In program file copy following code
+builder.Services.AddApiVersioning(opt =>
+{
+    opt.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+    opt.AssumeDefaultVersionWhenUnspecified = true;
+    opt.ReportApiVersions = true;
+    opt.ApiVersionReader = new UrlSegmentApiVersionReader();
+});
+
+10 copy following code in program file below 
+Services.AddControllers()
+==============
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+// Add ApiExplorer to discover versions
+builder.Services.AddVersionedApiExplorer(setup =>
+{
+    setup.GroupNameFormat = "'v'VVV";
+    setup.SubstituteApiVersionInUrl = true;
+});
+
+
+
+
+
+ //opt.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader(),
+ //                                               new HeaderApiVersionReader("x-api-version"),
+ //                                               new MediaTypeApiVersionReader("x-api-version"));
+ // opt.ApiVersionReader=new UrlSegmentApiVersionReader();
+ //opt.ApiVersionReader=new HeaderApiVersionReader("x-api-version");
+//opt.ApiVersionReader = new QueryStringApiVersionReader("x-api-version");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

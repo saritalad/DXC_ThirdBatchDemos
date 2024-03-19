@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_ExceptionHandling", "WebAPI_ExceptionHandling.csproj", "{9E353855-78CA-43C6-861C-23D71F0A9D5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E353855-78CA-43C6-861C-23D71F0A9D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E353855-78CA-43C6-861C-23D71F0A9D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E353855-78CA-43C6-861C-23D71F0A9D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E353855-78CA-43C6-861C-23D71F0A9D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0248E562-17E8-4DA0-BBF9-2A6B1A09FA51}
+	EndGlobalSection
+EndGlobal

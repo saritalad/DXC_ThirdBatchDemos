@@ -1,0 +1,55 @@
+Authentication: Identified (info about the user is stored on server b4 hand : and accordingly it is verified)
+Authorization:[Authorize] on top of any Action in the Controller 
+IdentityDbContext class 
+responsible to connection with all Tables used for Authentication and Authorization
+Microsoft Identity Framework
+step1 : Create WebApi_IdentityDemo with .net8.0
+step2 : Dnload 
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Design
+Microsoft.AspnetCore.Identity.EntityFrameworkCore
+Swashbuckle.AspnetCore.Filters
+step3: dblclick project and make it false as follows
+<InvariantGlobalization>false</InvariantGlobalization>
+step 4: Create Data Folder in it  Create Class DataContext 
+public class DataContext:IdentityDbContext
+write Constructor
+step 5: write the ConnectionString
+ "ConnectionStrings": {
+   "MyConStr": "server=ABCCOMPUTER;database=IdentityDB;Trusted_Connection=True;TrustServerCertificate=true"
+ }
+
+step 6 : DI  register it 
+  var connectionString = builder.Configuration.GetConnectionString("MyConstr") ?? throw new InvalidOperationException("Connection string 'AppDBContextConnection' not found.");
+
+  builder.Services.AddDbContext<DataContext>(options =>
+      options.UseSqlServer(connectionString));
+builder.Services.AddAuthentication();
+builder.Services.AddAuthentication();
+builder.Services.AddIdentityApiEndpoints<Microsoft.AspNetCore.Identity.IdentityUser>()
+    .AddEntityFrameworkStores<DataContext>();
+
+ step 7: do Migration As follows
+for install - dotnet tool install --global dotnet-ef
+
+to add migration - dotnet ef migrations add m1
+to update database :
+dotnet ef database update
+step 8:
+copy following code in Program.cs 
+after
+ builder.Services.AddEndpointsApiExplorer();
+  //  builder.Services.AddSwaggerGen();
+  builder.Services.AddSwaggerGen(options =>
+  {
+      options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+      {
+          In = ParameterLocation.Header,
+          Name = "Authorizatiom",
+          Type = SecuritySchemeType.ApiKey
+      });
+      options.OperationFilter<SecurityRequirementsOperationFilter>();
+  });
+
+ 

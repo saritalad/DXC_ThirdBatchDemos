@@ -1,0 +1,14 @@
+how to work with Stored Procedure in EF
+ex Product , Category 
+ViewModel combines fields from multiple tables
+step 1 Create tables Products and categories
+step 2  insert 5 records each
+step 3 Write stored procedure ProductDetails (inner join) product and Catetory
+step 4 New Web API project
+step5 Connection string
+step 6 Models Forlder (class Product,Category and ProductDetails)
+step 7 Add Nuget Packages Microsoft.EntityFrameworcore,SQlServer and Tools
+step 8 AppDBcontext class with DBSet of 3 classes 
+step 9 Configure SQl Server
+step 10 write Controller ProductDetails 
+and get method to show product details using FromSQL(Stored procedure)

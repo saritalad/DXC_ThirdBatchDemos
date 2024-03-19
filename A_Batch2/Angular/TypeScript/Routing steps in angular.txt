@@ -1,0 +1,14 @@
+Routing Steps
+step 1 install bootstrap 
+step2 2 configure path of bootstrap in Angular.json 
+step 3: copy paste Menucode for routerLinks 
+and <router-outlet> tag on appComponent.html
+step 4:  create components 
+  i home
+  ii onewaybinding
+  iii twowaybinding
+   iv pipes
+   v attributedirective
+
+step 5: open App.RoutingModule and configure routes 
+{path:"home",component:HomeComponent},

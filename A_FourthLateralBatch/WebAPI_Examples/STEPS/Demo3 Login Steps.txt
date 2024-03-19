@@ -1,0 +1,32 @@
+Step 1: create new asp.net Web App (RazorPages) project
+step 2: select none for authentication 
+Step 3: Https keep selected
+Step 4 :Right Click Project in Solution and Add New Scafold Item and select Identity 
+click ... and select _Layout
+Step 5 : Select layout , Account\LogIn,Account\Register , 
+then add APpDbContext , and AppUser Class
+step 6:
+open Appuser Class and add Firtname and lastname property 
+step 7 : open startup class 
+add code (If .netframwork is 5 or 3  not 6 
+   services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+           
+
+            services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<AppDbContext>();
+step 8 : modify connection string as per need 
+step 9 : Add-Migration
+update-Database 
+Step 10 : open Databse and see the table is created with Firstname and Lastname 
+Step 11: Open Program file and builder.Services.AddRazorPages() ; and app.mapRazorPages()  for Partial view Very Imp
+
+step 12: open _Layout.csHtml
+
+goto line 29 after</ul>
+<partial name=_LoginPartial>
+save and Run  will get Resgister and Login on Right top 
+step 13: goto Data \Page\ Register.cs file , Modify InputModel Properties Line 72 ..Firstname, Lastname then  go to OnPostAsync code add user= new AppUser(){ Firstname=Input.Firstnamr.....}
+Step 14 : open Register.HTml        add Firstname and Lastname code
+Step 15: Open _LogIn.Partial and change Manage.GetUser to Hello GetAsyncUser(user).Result.FirstName

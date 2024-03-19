@@ -1,0 +1,40 @@
+step 1 New Project with version 8.0
+step 2 : Entity Framework Nuget package 
+        Microsoft.AspnetCore.Authentication.JwtBearer
+step 3:AppDbContext class with 2 table 1 Users,Products
+step 4 : appsettings code
+
+1 connectionstring
+2 JWT Key values 
+"Jwt": {
+  "secret": "thisismysecretkeyforCoreIdentity",
+  "issuer": "Core_IdentityAP_JWT",// CASHIER DESK: Project Name
+   "audience": "Core_IdentityAP_JWT"// DELIVERY OF FOOD
+}
+step 5 :configure Dependency  as follows 
+ 1  DI for AppdbContext
+ 2 Configure JWT Authentication Scheme
+  as follows 
+ builder.Services.AddAuthentication(options =>
+ {
+     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+ })
+     .AddJwtBearer(c =>
+     {
+         c.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+         {
+             ValidateAudience = true,
+             ValidateIssuer = true,
+             ValidateLifetime = true,
+             ValidateIssuerSigningKey = true,
+             ValidIssuer =builder.Configuration.GetValue<string>("Jwt:issuer"),
+             ValidAudience =builder.Configuration.GetValue<string>("Jwt:audience"),
+             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("Jwt:secret")))
+         };
+     });
+step 6:
+        write Product controller with [Authorize]
+step 7 : AuthenticateController 
+        contructor with 2 dependencies  i AppDbContext ii IConfiguration
+   
