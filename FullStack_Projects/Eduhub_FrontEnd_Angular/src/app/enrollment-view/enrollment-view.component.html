@@ -1,0 +1,22 @@
+<h1> Course List</h1>
+<table class="table table-stripped table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">EnrollmentId</th>
+      <th scope="col">CourseId</th>
+      <th scope="col">StartDate</th>
+      <th scope="col">Status</th>
+      <th scope="col">Material</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of enrollist">
+      <td>{{e.enrollmentId}}</td>
+      <td>{{e.courseId}}</td>
+      <td>{{e.enrollmentDate|date:'dd/MM/yy'}}</td>
+      <td>{{e.status}}</td>
+      <td><a [routerLink]="['/Sdashboard/viewmaterial',e.courseId]">Course material</a></td>
+      </tr>
+        </tbody>
+</table>

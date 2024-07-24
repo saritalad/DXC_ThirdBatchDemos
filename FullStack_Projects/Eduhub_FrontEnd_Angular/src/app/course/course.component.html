@@ -1,0 +1,30 @@
+<h1> Course List</h1>
+<table class="table table-stripped table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">CourseId</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th> 
+      <th scope="col">StartDate</th>
+      <th scope="col">EndDate</th>
+      <th scope="col">Category</th>
+      <th scope="col">Level</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Material</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of courselist">
+            <td>{{c.courseId}}</td>
+      <td>{{c.title}}</td>
+      <td>{{c.description}}</td>
+      <td>{{c.courseStartDate|date:'dd/MM/yy'}}</td>
+      <td>{{c.courseEndDate|date:'dd/MM/yy'}}</td>
+      <td>{{c.category}}</td>
+      <td>{{c.level}}</td>
+      <td><a [routerLink]="['/Edashboard/editcourse',c.courseId]">Edit Course</a></td>
+      <td> <td><a [routerLink]="['/Edashboard/material',c.courseId]">Material List</a></td>
+    
+    </tr>
+        </tbody>
+</table>

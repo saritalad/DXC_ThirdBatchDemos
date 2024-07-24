@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <h1> new Enquiry </h1>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit(enquiry)">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>Enquiry Id </label>
+                            <input type="number" #enquiryId="ngModel" readonly class="form-control"  name="enquiryId" [(ngModel)]="enquiry.enquiryId">
+                     </div> 
+                        <div class="form-group">
+                            <label for="courseId">Course:</label>
+                            <input type="text" name="courseId" #courseId="ngModel" readonly class="form-control" [(ngModel)]="enquiry.courseId">
+                            </div>
+                        <div class="col form-group">
+                            <label>User Id </label>
+                            <input type="number" #userId="ngModel" readonly class="form-control"  name="userId" [(ngModel)]="enquiry.userId">
+                     </div> 
+                        <div class="col form-group">
+                            <label for="status">  status </label>
+                            <select  name="status" [(ngModel)]="selectedStatus" class="form-control" (change)="onStatusChange($event)">
+                                <option *ngFor="let status of Statuslist" [value]="status">{{ status }}</option>
+                              </select>                          
+                        </div>
+                        <div class="col form-group">
+                            <label for="subject">subject </label>
+                            <input type="text" #subject="ngModel" readonly  class="form-control" placeholder=""  name="subject" [(ngModel)]="enquiry.subject">
+                                                    </div>
+                        <div class="col form-group">
+                            <label>Message </label>
+                            <input type="text" #message="ngModel" readonly  class="form-control" placeholder=""  name="message" [(ngModel)]="enquiry.message">
+                                             </div>
+                        <!-- <div class="col form-group">
+                            <label> enquiry date </label>
+                            <input type="date" #enquiryDate="ngModel"  required  class="form-control" placeholder=""  name="enquiryDate" [(ngModel)]="enquiry.enquiryDate">
+                            </div>  -->
+                            <div class="col form-group">
+                                <label>Response </label>
+                                <input type="text" #response="ngModel" required  class="form-control" placeholder=""  name="response" [(ngModel)]="enquiry.response">
+                                <div *ngIf="response.touched && response.invalid" class="alert alert-danger">
+                                <p *ngIf="response.hasError('required')">response is Required</p>
+                                </div>
+                            </div>
+                                           
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> submit </button>
+                        </div> 
+                       
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+<h1> All Enquieries</h1>
+<table class="table table-stripped table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">CourseId</th>
+      <th scope="col">userId</th>
+      <th scope="col">Subject</th> 
+      <th scope="col">Message</th>
+      <th scope="col">Enquiry Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Response</th>
+      <th scope="col">Update Staus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of enquirylist">
+        <td>{{e.courseId}}</td>
+      <td>{{e.userId}}</td>
+      <td>{{e.subject}}</td>
+      <td>{{e.message}}</td>
+      <td>{{e.enquiryDate|date:'dd/MM/yy'}}</td>
+      <td>{{e.status}}</td>
+      <td>{{e.response}}</td>
+      <td><a [routerLink]="['/Edashboard/editenquiry',e.enquiryId]">Update Status</a></td>
+       </tr>
+        </tbody>
+</table>

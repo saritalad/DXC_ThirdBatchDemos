@@ -1,0 +1,23 @@
+<h1> All Students</h1>
+<table class="table table-stripped table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">StudentId</th>
+      <th scope="col">UserName</th> 
+      <th scope="col">Email</th>
+      <th scope="col">Mobile No</th>
+      
+           
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of students">
+      <td>{{e.userId}}</td>
+      <td>{{e.userName}}</td>
+      <td>{{e.email}}</td>
+      <td>{{e.mobileNumber}}</td>
+    
+     
+       </tr>
+        </tbody>
+</table>

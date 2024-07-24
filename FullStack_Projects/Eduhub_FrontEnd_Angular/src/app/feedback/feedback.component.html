@@ -1,0 +1,20 @@
+<h1> All Enquieries</h1>
+<table class="table table-stripped table-hover">
+  <thead class="thead-light">
+    <tr>
+        <th scope="col">FeedbackId</th>
+      <th scope="col">userId</th>
+      <th scope="col">feedback Date</th>
+      <th scope="col">Message</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of feedbacklist">
+        <td>{{e.feedBackId}}</td>
+      <td>{{e.userId}}</td>
+      <td>{{e.feedbackmsg}}</td>
+      <td>{{e.feedbackdate|date:'dd/MM/yy'}}</td>
+           </tr>
+        </tbody>
+</table>

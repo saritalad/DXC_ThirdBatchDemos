@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <a href="" class="float-right btn btn-outline-primary mt-1"> new Course </a>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>Title of Course </label>
+                            <input type="text" #title="ngModel" required  class="form-control" placeholder=""  name="title" [(ngModel)]="newcourse.title">
+                            <div *ngIf="title.touched && title.invalid" class="alert alert-danger">
+                                <p *ngIf="title.hasError('required')">title is Required</p>
+                            </div>
+                        </div> 
+                        <div class="col form-group">
+                            <label>Description </label>
+                            <input type="text" #description="ngModel" required  class="form-control" placeholder=""  name="description" [(ngModel)]="newcourse.description">
+                            <!-- <div *ngIf="description.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="description.hasError('required')">title is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="col form-group">
+                            <label>Start date </label>
+                            <input type="date" #courseStartDate="ngModel" required  class="form-control" placeholder=""  name="courseStartDate" [(ngModel)]="newcourse.courseStartDate">
+                            <!-- <div *ngIf="courseStartDate.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="courseStartDate.hasError('required')">courseStartDate is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="col form-group">
+                            <label>End date </label>
+                            <input type="date" #courseEndDate="ngModel" required  class="form-control" placeholder=""  name="courseEndDate" [(ngModel)]="newcourse.courseEndDate">
+                            <!-- <div *ngIf="courseEndDate.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="courseEndDate.hasError('required')">course End Date is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="col form-group">
+                            <label>category </label>
+                            <input type="text" #category="ngModel" required  class="form-control" placeholder=""  name="category" [(ngModel)]="newcourse.category">
+                            <!-- <div *ngIf="category.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="category.hasError('required')">category is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="col form-group">
+                            <label>Level </label>
+                            <input type="text" #level="ngModel" required  class="form-control" placeholder=""  name="category" [(ngModel)]="newcourse.level">
+                            <!-- <div *ngIf="level.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="level.hasError('required')">Level is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="col form-group">
+                            <label>UserId </label>
+                            <input type="number"  class="form-control" readonly  name="userId" [(ngModel)]="ID">
+                            
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> New Course </button>
+                        </div> 
+                       
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>

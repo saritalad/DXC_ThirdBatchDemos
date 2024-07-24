@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <button type="button" class="btn btn-primary" > Register </button>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <!-- <div class="col form-group">
+                            <label>User Id </label>
+                            <input type="number" #userId="ngModel" required  class="form-control" placeholder=""  name="userId" [(ngModel)]="user.userId">
+                            <div *ngIf="userId.touched && userId.invalid" class="alert alert-danger">
+                                <p *ngIf="userId.hasError('required')">UserId is Required</p>
+                            </div>
+                        </div>  -->
+                        <div class="col form-group">
+                            <label>  userName </label>
+                            <input type="text" #userName="ngModel" required  class="form-control" placeholder=""  name="userName" [(ngModel)]="user.userName">
+                            <div *ngIf="userName.touched && userName.invalid" class="alert alert-danger">
+                            <p *ngIf="userName.hasError('required')"> userName is Required</p>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label>email </label>
+                            <input type="text" #email="ngModel" required  class="form-control" placeholder=""  name="email" [(ngModel)]="user.email">
+                            <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+                            <p *ngIf="email.hasError('required')">email is Required</p>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label>Password </label>
+                            <input type="password" #password="ngModel" required  class="form-control" placeholder=""  name="password" [(ngModel)]="user.password">
+                            <div *ngIf="password.touched && email.invalid" class="alert alert-danger">
+                            <p *ngIf="password.hasError('required')">Password is Required</p>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label>MobileNumber </label>
+                            <input type="text" #mobileNumber="ngModel" required  class="form-control" placeholder=""  name="email" [(ngModel)]="user.mobileNumber">
+                            <div *ngIf="mobileNumber.touched && mobileNumber.invalid" class="alert alert-danger">
+                            <p *ngIf="mobileNumber.hasError('required')">mobileNumber is Required</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="userRole">User Role:</label>
+                            <select class="form-control"  name="userRole" [(ngModel)]="user.userRole" (change)="onUserRoleChange($event)">
+                                <option selected>Select UserRole</option>
+                                <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>
+                            </select>
+                          </div>
+                        <div class="col form-group">
+                            <label> profileImage </label>
+                            <input type="text" #profileImage="ngModel" required  class="form-control" placeholder=""  name=" profileImage" [(ngModel)]="user.profileImage">
+                            <div *ngIf="profileImage.touched && profileImage.invalid" class="alert alert-danger">
+                            <p *ngIf="profileImage.hasError('required')">profileImage is Required</p>
+                            </div>
+                        </div>
+                                          
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> submit </button>
+                        </div> 
+                       
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>

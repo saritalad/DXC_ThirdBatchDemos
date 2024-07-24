@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <h1> Feedback </h1>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit(newfeedback)" >
+                    <div class="form-row">
+                            <div class="col form-group">
+                            <label>User Id </label>
+                            <input type="number" #userId="ngModel" readonly class="form-control"  name="userId" [(ngModel)]="newfeedback.userId">
+                     </div> 
+                        <div class="col form-group">
+                            <label for="feedbackmsg">  feedback Message </label>
+                            <input type="text" #feedbackmsg="ngModel" class="form-control" name="feedbackmsg" [(ngModel)]="newfeedback.feedbackmsg"   >                    
+                        </div>
+                                             
+                        <div class="col form-group">
+                            <label> feedback date </label>
+                            <input type="date" #feedbackDate="ngModel"    class="form-control" placeholder=""  name="feedbackDate" [(ngModel)]="newfeedback.feedbackdate">
+                            </div> 
+                                                                    
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> submit </button>
+                        </div> 
+                       
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+

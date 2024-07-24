@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <h1> new Enquiry </h1>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="courseId">Course:</label>
+                            <select name="courseId"  class='form-control' [(ngModel)]="selectedCourseId" (change)="onCourseChange($event)">
+                              <option value="">-- Select Course --</option>
+                              <option *ngFor="let course of courselist" [value]="course.courseId">
+                                {{ course.title }}
+                              </option>
+                            </select>
+                            </div>
+                        <div class="col form-group">
+                            <label>User Id </label>
+                            <input type="number" #userId="ngModel" readonly class="form-control"  name="userId" [(ngModel)]="newenquiry.userId">
+                     </div> 
+                        <div class="col form-group">
+                            <label for="status">  status </label>
+                            <select  name="status" [(ngModel)]="selectedStatus" class="form-control" (change)="onStatusChange($event)">
+                                <option *ngFor="let status of Statuslist" [value]="status">{{ status }}</option>
+                              </select>                          
+                        </div>
+                        <div class="col form-group">
+                            <label for="subject">subject </label>
+                            <input type="text" #subject="ngModel" required  class="form-control" placeholder=""  name="subject" [(ngModel)]="newenquiry.subject">
+                            <div *ngIf="subject.touched && subject.invalid" class="alert alert-danger">
+                            <p *ngIf="subject.hasError('required')">subject is Required</p>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label>message </label>
+                            <input type="text" #message="ngModel" required  class="form-control" placeholder=""  name="message" [(ngModel)]="newenquiry.message">
+                            <div *ngIf="message.touched && message.invalid" class="alert alert-danger">
+                            <p *ngIf="message.hasError('required')">message is Required</p>
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label> enquiry date </label>
+                            <input type="date" #enquiryDate="ngModel" required  class="form-control" placeholder=""  name="enquiryDate" [(ngModel)]="newenquiry.enquiryDate">
+                            </div> 
+                                           
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> submit </button>
+                        </div> 
+                       
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>

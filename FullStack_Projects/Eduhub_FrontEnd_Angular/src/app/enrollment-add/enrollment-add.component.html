@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <h1> Enrolement For New Course </h1>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit(newenrolement)" >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="courseId">Course:</label>
+                            <select name="courseId"  class='form-control' [(ngModel)]="selectedCourseId" (change)="onCourseChange($event)">
+                              <option value="">-- Select Course --</option>
+                              <option *ngFor="let course of courselist" [value]="course.courseId">
+                                {{ course.title }}
+                              </option>
+                            </select>
+                            </div>
+                        <div class="col form-group">
+                            <label>User Id </label>
+                            <input type="number" #userId="ngModel" readonly class="form-control"  name="userId" [(ngModel)]="newenrolement.userId">
+                     </div> 
+                        <!-- <div class="col form-group">
+                            <label for="status">  status </label>
+                            <select  name="status" [(ngModel)]="selectedStatus" class="form-control" (change)="onStatusChange($event)">
+                                <option *ngFor="let status of Statuslist" [value]="status">{{ status }}</option>
+                              </select>                          
+                        </div> -->
+                                             
+                        <div class="col form-group">
+                            <label> newenrolement date </label>
+                            <input type="date" #newenrolementDate="ngModel"  required  class="form-control" placeholder=""  name="newenrolementDate" [(ngModel)]="newenrolement.enrollmentDate">
+                            </div> 
+                                                                    
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> submit </button>
+                        </div> 
+                       
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>
+
+

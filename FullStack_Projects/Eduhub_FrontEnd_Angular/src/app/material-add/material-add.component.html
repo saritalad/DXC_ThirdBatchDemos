@@ -1,0 +1,55 @@
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <header class="card-header">
+                <a href="" class="float-right btn btn-outline-primary mt-1"> new newmaterial </a>
+             </header>
+            <article class="card-body">
+                <form #form="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="courseId">Course:</label>
+                            <select name="courseId"  class='form-control' [(ngModel)]="selectedCourseId" (change)="onCourseChange($event)">
+                              <option value="">-- Select Course --</option>
+                              <option *ngFor="let course of courselist" [value]="course.courseId">
+                                {{ course.title }}
+                              </option>
+                            </select>
+                            </div>
+                        <div class="col form-group">
+                            <label>Title of material </label>
+                            <input type="text" #title="ngModel" required  class="form-control" placeholder=""  name="title" [(ngModel)]="newmaterial.title">
+                            <div *ngIf="title.touched && title.invalid" class="alert alert-danger">
+                                <p *ngIf="title.hasError('required')">title is Required</p>
+                            </div>
+                        </div> 
+                        <div class="col form-group">
+                            <label>Description </label>
+                            <input type="text" #description="ngModel" required  class="form-control" placeholder=""  name="description" [(ngModel)]="newmaterial.description">
+                            <!-- <div *ngIf="description.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="description.hasError('required')">title is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="col form-group">
+                            <label>Upload  date </label>
+                            <input type="date" #uploadDate="ngModel" required  class="form-control" placeholder=""  name="UploadDate" [(ngModel)]="newmaterial.uploadDate">
+                        </div>
+                        
+                        <div class="col form-group">
+                            <label>ContentType </label>
+                            <input type="text" #category="ngModel" required  class="form-control" placeholder=""  name="category" [(ngModel)]="newmaterial.contentType">
+                            <!-- <div *ngIf="category.touched && title.invalid" class="alert alert-danger">
+                            <p *ngIf="category.hasError('required')">category is Required</p>
+                            </div> -->
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.form.valid"> Add New material </button>
+                        </div> 
+                    </div>
+                </form>
+            </article>
+        </div>
+    </div>
+</div>
+<div>CourseId {{newmaterial.courseId}}</div>
