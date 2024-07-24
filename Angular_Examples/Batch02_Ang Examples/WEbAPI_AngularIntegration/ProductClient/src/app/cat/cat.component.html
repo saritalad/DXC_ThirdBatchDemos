@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Category  List</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Category Id</th>
+            <th>Category Name</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of catlist">
+            <td> {{c.catid}} </td>
+             <td> {{c.catname}} </td>
+                     <td><a routerLink="/editcat/{{c.catid}}" >edit</a></td>
+          </tr>      
+        </tbody>
+    </table>
+  </div>
+

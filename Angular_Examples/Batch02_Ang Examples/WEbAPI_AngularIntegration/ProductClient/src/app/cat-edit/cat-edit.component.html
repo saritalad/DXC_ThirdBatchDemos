@@ -1,0 +1,15 @@
+<h1>Edit Category</h1>
+<div class="row">
+    <form #form="ngForm" novalidate (ngSubmit)="Submit(form.value)">
+        <div class="form-group">
+            <label for="id">Category Id</label><br>
+            <input   type="number"  readonly name="catid"  class="form-control" [(ngModel)]="modified.catid">
+        </div>
+<div class="form-group">
+    <label for="catname">Category Name</label>
+    <input type="text" name="catname"  class="form-control" 
+     [(ngModel)]="modified.catname">
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Edit</button>
+</div>

@@ -1,0 +1,10 @@
+<h1>Hello</h1>
+<h2>{{name}}</h2>
+<h3>{{x}}</h3>
+<ul *ngFor="let f of fruits">
+  <option>{{f}}</option>
+</ul>
+<hr>
+<h1 *ngIf="result">Welcome</h1>
+<h4 *ngIf='!vegan; else elseBlock'>Here is your Chicken wings and fries</h4>
+<ng-template #elseBlock>Here is your Vegan salad</ng-template>

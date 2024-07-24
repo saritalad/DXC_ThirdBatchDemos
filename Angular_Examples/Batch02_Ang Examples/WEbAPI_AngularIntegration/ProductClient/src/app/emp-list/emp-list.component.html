@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Employees List</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Employee name</th>
+             <th>Department</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of emplist">
+            <td> {{emp.firstname}} </td>
+            <td> {{emp.department}} </td>
+         
+           <td><a routerLink="/edit/{{emp.id}}" >edit</a></td>
+           <!-- <td> <a href="javascript:void()" (click)="delete(emp.productId)">Delete</a></td> -->
+
+          </tr>      
+        </tbody>
+    </table>
+  </div>

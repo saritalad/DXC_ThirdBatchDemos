@@ -1,0 +1,22 @@
+<h1>one way binding Examples</h1>
+<h1>Interpolation :{{title}}</h1>
+<h2>x + y = {{x+y}} </h2>
+<hr>
+<h1>Property Binding:</h1>
+Name of Teacher :<input type="Text" [value]="name">
+<br>
+Profession :<input type="text" [value]="profession">
+<br>
+Email:<input type="Text" [value]="user.email">
+<hr>
+<p [style.color]="getColor()">Hello I am in red color</p>
+<hr>
+<h1>Event Binding:</h1>
+<button (click)="ClickMe()"> Clickm Here</button>
+
+<h2>You clicked the button {{count}} Times </h2>
+<hr>
+<h1>Template Reference </h1>
+
+<input #el (input)="handleInput(el)" type="text">
+<p>You have entered {{val}}</p>

@@ -1,0 +1,16 @@
+<p>Add New Category</p>
+<form #catForm="ngForm" (ngSubmit)="onSubmit(catForm.value)">
+   
+    <div>
+        <h1>New Employee</h1>
+            <pre></pre>
+        <div class="form-group">
+            <label for="Catname">Category Name</label>
+            <label for="name">name</label><br>
+            <input name="catname" type="text" ngModel>
+            </div>
+           
+                      
+            <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+

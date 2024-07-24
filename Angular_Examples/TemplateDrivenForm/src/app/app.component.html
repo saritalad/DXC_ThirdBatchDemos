@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+        <form #userform="ngForm" (ngSubmit)="OnSubmit(userform)">
+
+          <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" #firstname="ngModel" required minlength="3" maxlength="12" name="firstname" class="form-control" ngModel>
+           <div *ngIf="firstname.touched && firstname.invalid" class="alert alert-danger">
+            <p *ngIf="firstname.hasError('required')">Firstname is required</p>
+            <p *ngIf="firstname.hasError('minlength')">minimum length should be 3</p>
+          </div>
+    
+          </div>
+          <div class="form-group">
+            <label for="firstname">Lastname</label>
+            <input type="text" #lastname="ngModel" required minlength="3" maxlength="12" name="lastname" class="form-control" ngModel>
+           <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger">
+            <p *ngIf="lastname.hasError('required')">Lastname is required</p>
+            <p *ngIf="lastname.hasError('minlength')">minimum length should be 3</p>
+          </div>
+          </div>
+<div> 
+  <button type="submit" class="btn btn-primary"  [disabled]="!userform.valid"    >Submit</button>
+</div>
+        </form>
+    </div>
+  </div>
+</div>
+<p>
+  {{userform.value|json}}
+</p>
+<a routerLink="edit">Reactive Form</a>
+<router-outlet></router-outlet>

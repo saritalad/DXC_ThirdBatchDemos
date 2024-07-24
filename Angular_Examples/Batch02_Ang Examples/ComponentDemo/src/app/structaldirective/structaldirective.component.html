@@ -1,0 +1,30 @@
+<p>structaldirective Examples!</p>
+<h2> ngFor Directive</h2>
+<table class="table table-bordered">
+    <tr><td>Id</td><td>Name</td><td>Price</td></tr>
+    <tr *ngFor="let p of products">
+    <td>{{p.id}}</td><td>{{p.name}}</td><td>{{p.price}}</td>
+    </tr>
+    </table>
+
+
+
+<h1> *ngSwitch Case Example</h1>
+Input string : <input type='text' [(ngModel)]="fruit" />
+<div class="row" [ngSwitch]="fruit">
+   <div *ngSwitchCase="'Apple'">Rate of Apple is Rs 150 </div>
+   <div *ngSwitchCase="'Banana'">Rs 50 </div>
+   <div *ngSwitchCase="'Orange'">Rs 300</div>
+   <div *ngSwitchDefault>This is Invalid Fruit</div>
+</div>
+
+<hr>
+<h1>*ngIf Structural Directive Example</h1>
+<p *ngIf="x<10">
+   This is true condition Statement 
+</p>
+
+<div *ngIf = 'variab==1; else multi'>{{variab}}</div> 
+<ng-template #multi> 
+   {{variab *2}} 
+ </ng-template>

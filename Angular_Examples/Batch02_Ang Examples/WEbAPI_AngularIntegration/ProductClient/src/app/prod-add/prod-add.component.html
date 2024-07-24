@@ -1,0 +1,28 @@
+<p>Add New Product</p>
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)">
+   
+    <div>
+        <h1>New Product</h1>
+            <pre></pre>
+        <div class="form-group">
+            <label for="name">name</label><br>
+            <input name="productname" type="text" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="price">price</label><br>
+                <input type="number" ngModel  name="price">
+                
+            </div>
+            <div class="form-group">
+                <label for="catid">Category Id</label>
+                <select name="catid" [(ngModel)]="catId"  class="form-control">
+                   <option value="">Choose Category</option>
+                    <option  *ngFor="let cat of catlist" value="{{cat.catid}}" >{{cat.catname}}</option>
+                </select>
+            <!-- // <input type="number" name="catid" ngModel/> -->
+
+            </div>
+             
+            <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+<h1>{{productForm.value|json}}</h1>

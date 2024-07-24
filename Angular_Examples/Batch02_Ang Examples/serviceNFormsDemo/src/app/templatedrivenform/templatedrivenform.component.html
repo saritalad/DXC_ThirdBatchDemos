@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-5">
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" >
+            <div class="FormGroup">
+                <label for="firstname">Firstname</label>
+                <input type="text" name="firstname" #firstname="ngModel" ngModel required minlength="3" />
+                <div *ngIf="firstname.touched && firstname.invalid" class="alert alert-danger">
+                    <p *ngIf="firstname.hasError('required')">Firstname is required</p>
+                    <p *ngIf="firstname.hasError('minlength')">minimum length should be 3</p>
+                  </div>
+            </div>
+            <div class="FormGroup">
+                <label for="lastname">Lastname</label>
+                <input type="text" name="lastname" #lastname="ngModel" ngModel required minlength="3"/>
+                <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger">
+                    <p *ngIf="lastname.hasError('required')">Firstname is required</p>
+                    <p *ngIf="lastname.hasError('minlength')">minimum length should be 3</p>
+                  </div>
+                        
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Submit</button>
+            </div>
+
+          </form>
+      </div>
+    </div>
+</div>
+<div>
+<p>Firstname touched : {{firstname.touched}}</p>
+<p>Firstname dirty : {{firstname.dirty}}</p>
+<p>Firstname PRISTINE : {{firstname.pristine}}</p>
+<p>Firstname invalid : {{firstname.invalid}}</p>
+<p>Firstname value : {{firstname.value}}</p>
+
+</div>

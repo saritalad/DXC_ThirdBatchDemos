@@ -1,0 +1,41 @@
+<p>reactive-form works!</p>
+<div class="container">
+    <h1>Edit Form</h1>
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+     
+        <div class="col-md-5 mx auto">
+            <div class="form-group">
+                <label for="firstname">firstname</label><br>
+                <input type="text" class="form-control"  name="firstname" formControlName="firstname">
+                <div *ngIf="Firstname.errors && Firstname.touched" class="text-danger">
+                    <p *ngIf="Firstname.errors['requied']">Firstname is required </p>
+                    <p *ngIf="Firstname.errors['minlength']">min length =3</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname">lastname</label><br>
+                <input type="text" class="form-control"  name="lastname" formControlName="lastname">
+                <div *ngIf="Lastname.errors && Lastname.touched" class="text-danger">
+                    <p *ngIf="Lastname.errors['requied']">lastname is required </p>
+                    <p *ngIf="Lastname.errors['minlength']">min length =3</p>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+
+         </div>
+    </form>
+</div>
+<hr>
+<div>
+    <p >untouched:{{Firstname.untouched}}</p>
+    <p >dirty:{{Firstname.dirty}}</p>
+    <p >pristine:{{Firstname.pristine}}</p>
+    <p >valid:{{Firstname.valid}}</p>
+    <p >Invalid:{{Firstname.invalid}}</p>
+    <p >errors:{{Firstname.errors|json}}</p>
+    <p >value:{{Firstname.value}}</p>   
+
+</div>

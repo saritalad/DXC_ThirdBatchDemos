@@ -1,0 +1,15 @@
+<h1>product List!</h1>
+<ul *ngFor="let p of products;let i =index">
+<option>{{i}} {{p.id}} {{p.name}} {{p.price}}</option>
+</ul>
+<table class="table table-bordered">
+<tr><td>Id</td><td>Name</td><td>Price</td></tr>
+<tr *ngFor="let p of products">
+<td>{{p.id}}</td><td>{{p.name}}</td><td>{{p.price}}</td>
+</tr>
+</table>
+<hr>
+<h1 *ngIf="paid">Amount is paid </h1>
+<hr>
+<h4 *ngIf='vegan; else elseBlock'>Here is your Chicken wings and fries</h4>
+<ng-template #elseBlock>Here is your Vegan salad</ng-template>

@@ -1,0 +1,6 @@
+<p>product List!</p>
+<ul *ngFor="let p of prodlist">
+<li> {{p.name}}- - {{p.price|currency:"INR"}} -- <a routerLink="details/{{p.id}}" >Product details</a>  </li>
+
+</ul>
+<router-outlet></router-outlet>
