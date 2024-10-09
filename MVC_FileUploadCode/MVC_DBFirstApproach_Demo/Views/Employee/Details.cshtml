@@ -1,0 +1,33 @@
+﻿@model MVC_DBFirstApproach_Demo.Models.Employee
+@{
+    ViewBag.Title = "Employee Details";
+    var photoPath = "~/images/" + (Model.Photopath ?? "noimage.jpg");
+}
+<h1>Details</h1>
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top" src="@photoPath" asp-append-version="true" />
+
+                <h4>Employee ID : @Model.Id</h4>
+                <h4>Salary: @Model.Salary</h4>
+                <h4>Salary: @Model.Salary</h4>
+                <h4>Date of Joining: @Model.Doj</h4>
+                <h4>Gender: @Model.gender</h4>
+                <h4>Department : @Model.deptId</h4>
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a>
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.Id">Delete</a>
+                <a asp-controller="Employee"  asp-action="index" class="btn btn-warning">Back To List</a>
+            </div>
+        </div>
+    </div>
+</div>
