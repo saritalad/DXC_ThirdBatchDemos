@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduHub_Project", "EduHub_Project.csproj", "{878DD1F1-92B6-4472-BEEF-1316FE9E519B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduHub_Project", "EduHub_Project.csproj", "{878DD1F1-92B6-4472-BEEF-1316FE9E519B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduHubTestProject", "..\EduHubTestProject\EduHubTestProject.csproj", "{C671D8C0-EF44-4EE1-95BC-1CAA718D40DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{878DD1F1-92B6-4472-BEEF-1316FE9E519B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{878DD1F1-92B6-4472-BEEF-1316FE9E519B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{878DD1F1-92B6-4472-BEEF-1316FE9E519B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C671D8C0-EF44-4EE1-95BC-1CAA718D40DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C671D8C0-EF44-4EE1-95BC-1CAA718D40DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C671D8C0-EF44-4EE1-95BC-1CAA718D40DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C671D8C0-EF44-4EE1-95BC-1CAA718D40DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

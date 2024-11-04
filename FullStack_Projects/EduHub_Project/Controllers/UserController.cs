@@ -18,7 +18,7 @@ namespace EduHub_Project.Controllers
         }
 
         [HttpGet("{userId}")]
-        public async Task<IActionResult> GetUser(long userId)
+        public async Task<IActionResult> GetUser(int userId)
         {
             var user = await _userService.GetUserAsync(userId);
             if (user == null)
@@ -43,7 +43,7 @@ namespace EduHub_Project.Controllers
         }
 
         [HttpPut("{userId}")]
-        public async Task<IActionResult> UpdateUser(long userId, User updatedUser)
+        public async Task<IActionResult> UpdateUser(int userId, User updatedUser)
         {
             var user = await _userService.UpdateUserAsync(userId, updatedUser);
             if (user == null)
@@ -53,7 +53,7 @@ namespace EduHub_Project.Controllers
         }
 
         [HttpDelete("{userId}")]
-        public async Task<IActionResult> DeleteUser(long userId)
+        public async Task<IActionResult> DeleteUser(int userId)
         {
             var result = await _userService.DeleteUserAsync(userId);
             if (!result)

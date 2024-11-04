@@ -13,7 +13,7 @@ namespace EduHub_Project.repository
             _context = context;
         }
         
-        public async Task<User> GetUserAsync(long userId)
+        public async Task<User> GetUserAsync(int userId)
         {
             return await _context.Users.FindAsync(userId);
         }
@@ -31,7 +31,7 @@ namespace EduHub_Project.repository
             return newUser;
         }
 
-        public async Task<User> UpdateUserAsync(long userId, User updatedUser)
+        public async Task<User> UpdateUserAsync(int userId, User updatedUser)
         {
             var existingUser = await _context.Users.FindAsync(userId);
             if (existingUser == null)
@@ -48,7 +48,7 @@ namespace EduHub_Project.repository
             return existingUser;
         }
 
-        public async Task<bool> DeleteUserAsync(long userId)
+        public async Task<bool> DeleteUserAsync(int userId)
         {
             var user = await _context.Users.FindAsync(userId);
             if (user == null)

@@ -28,7 +28,7 @@ namespace LINQ_And_LambdaExpression_DEmo
 
         //    //    Console.WriteLine(p.Name + " "+p.Age);
         //    //}
-
+        
         //    Console.WriteLine("\n-----------------------------------------------------------------------------");
         //    Console.WriteLine("\n Checking whether any person is teen-ager or not...");
         //    if (listPersonsInCity.Any(e => (e.Age >= 13 && e.Age <= 19)))

@@ -1,0 +1,10 @@
+Explanation
+InMemory Database: Using an in-memory database with
+ DbContextOptionsBuilder allows the tests to
+ interact with a real instance of DbSet<User> without 
+needing to mock it.
+Adding and Retrieving Data: You can directly use _context.
+Users.AddAsync(user) and _context.SaveChangesAsync() to add 
+and retrieve data in a way that closely resembles actual database behavior.
+Assertions: The assertions now check the actual in-memory 
+database to ensure expected behavior, without requiring Moq.
